@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var tvPantallaInicio: TextView
     lateinit var constraintLayout: ConstraintLayout
+    lateinit var botonCambiar: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         Log.v("MainActivity", "Hola como estamos")
         tvPantallaInicio = this.findViewById(R.id.textView)
         constraintLayout = this.findViewById(R.id.constraintLayout)
+        botonCambiar = this.findViewById(R.id.botonCambiar)
 
-    }
-    fun clickBoton(v: View){
-        constraintLayout.setBackgroundColor(Color.BLACK)
+        botonCambiar.setOnClickListener({
+            tvPantallaInicio.text = "Has cambiado el color de fondo"
+            constraintLayout.setBackgroundColor(Color.WHITE)
+        })
+
     }
 }
