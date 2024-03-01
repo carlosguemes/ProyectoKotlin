@@ -16,6 +16,7 @@
         android:fontFamily="@font/comic_neue_bold"
         android:text="BIENVENIDO A LA APP"
         android:textColor="#FF0000"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
