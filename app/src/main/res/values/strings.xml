@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyectoKotlin</string>
+    <string name="pantalla_inicio">Pantalla de inicio</string>
 </resources>
