@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.v("MainActivity", "Hola como estamos")
         tvPantallaInicio = this.findViewById(R.id.textView)
         constraintLayout = this.findViewById(R.id.constraintLayout)
         constraintPequenyo = this.findViewById(R.id.constraintPequenyo)

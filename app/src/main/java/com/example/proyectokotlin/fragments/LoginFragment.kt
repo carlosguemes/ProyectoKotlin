@@ -83,15 +83,4 @@ class LoginFragment : Fragment(), View.OnClickListener {
         return textoEmail.text.toString().isEmpty() || textoPassword.text.toString().isEmpty()
     }
 
-
-
-    fun botonAceptarLogin(){
-
-    }
-
-    fun botonRegistroLogin(){
-
-    }
-
-
 }
