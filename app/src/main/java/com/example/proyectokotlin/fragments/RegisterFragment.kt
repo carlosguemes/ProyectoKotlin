@@ -57,7 +57,13 @@ class RegisterFragment : Fragment(), OnClickListener {
             R.id.botonAceptarRegistro -> {
                 if (checkFields()) {
                     Snackbar.make(requireView(), "Por favor, completa todos los campos.", Snackbar.LENGTH_SHORT).show()
-                } else {
+                }
+
+                else if(!checkPassword()){
+                    Snackbar.make(requireView(), "Las contraseñas deben ser iguales", Snackbar.LENGTH_SHORT).show()
+                }
+
+                else {
                     auth.createUserWithEmailAndPassword(textoEmailRegistro.text.toString(), textoPasswordRegistro.text.toString())
                         .addOnCompleteListener(requireActivity()) { task ->
                             if (task.isSuccessful) {
