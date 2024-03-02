@@ -44,6 +44,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
         textoPassword = view.findViewById(R.id.textoPassword)
         botonAceptar = view.findViewById(R.id.botonAceptarLogin)
         botonRegistro = view.findViewById(R.id.botonRegistroLogin)
+
+        botonAceptar.setOnClickListener(this)
+        botonRegistro.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -74,6 +77,28 @@ class LoginFragment : Fragment(), View.OnClickListener {
                                 }
                             }
                         }
+
+                    /*auth.createUserWithEmailAndPassword(textoEmail.text.toString(), textoPassword.text.toString())
+                        .addOnCompleteListener(requireActivity()) { task ->
+                            if (task.isSuccessful) {
+                                val activity1: Intent = Intent(requireActivity(), MainActivity::class.java)
+                                startActivity(activity1)
+                                requireActivity().finish()
+                            } else {
+                                val exception = task.exception
+                                if (exception is FirebaseAuthException) {
+                                    val errorMessage = when (exception.errorCode) {
+                                        "ERROR_WEAK_PASSWORD" -> "La contraseña es débil. Debe tener al menos 8 caracteres."
+                                        "ERROR_INVALID_CREDENTIAL" -> "Credenciales inválidas. Revisa el formato del correo electrónico."
+                                        "ERROR_EMAIL_ALREADY_IN_USE" -> "Esta cuenta ya está en uso."
+                                        else -> "Error al crear la cuenta. Por favor, inténtalo nuevamente."
+                                    }
+                                    Snackbar.make(requireView(), errorMessage, Snackbar.LENGTH_SHORT).show()
+                                } else {
+                                    Snackbar.make(requireView(), "Error al crear la cuenta. Por favor, inténtalo nuevamente.", Snackbar.LENGTH_SHORT).show()
+                                }
+                            }
+                        }*/
                 }
             }
             R.id.botonRegistroLogin -> navController.navigate(R.id.action_loginFragment_to_registerFragment)
