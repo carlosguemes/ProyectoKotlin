@@ -42,8 +42,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
         textoEmail = view.findViewById(R.id.textoEmail)
         textoPassword = view.findViewById(R.id.textoPassword)
-        botonAceptar = view.findViewById(R.id.botonAceptarLogin)
-        botonRegistro = view.findViewById(R.id.botonRegistroLogin)
+        botonAceptar = view.findViewById(R.id.botonAceptarRegistro)
+        botonRegistro = view.findViewById(R.id.botonCancelarRegistro)
 
         botonAceptar.setOnClickListener(this)
         botonRegistro.setOnClickListener(this)
@@ -51,7 +51,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.botonAceptarLogin -> {
+            R.id.botonAceptarRegistro -> {
                 if (checkFields()) {
                     Snackbar.make(requireView(), "Por favor, completa todos los campos.", Snackbar.LENGTH_SHORT).show()
                 } else {
@@ -101,7 +101,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                         }*/
                 }
             }
-            R.id.botonRegistroLogin -> navController.navigate(R.id.action_loginFragment_to_registerFragment)
+            R.id.botonCancelarRegistro -> navController.navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
     private fun checkFields(): Boolean {
